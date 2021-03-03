@@ -4,6 +4,8 @@
         "es2021": true
     },
     "extends": [
+        "react-app",
+        "prettier",
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended"
@@ -18,6 +20,7 @@
     },
     "plugins": [
         "react",
+        "prettier",
         "@typescript-eslint"
     ],
     "rules": {
@@ -26,11 +29,11 @@
             {
               "printWidth": 80,
               "trailingComma": "es5",
-              "semi": false,
+              "semi": true,
               "jsxSingleQuote": true,
               "singleQuote": true,
-              "useTabs": true
+              "useTabs": false
             }
-          ]
+        ]
     }
 }
