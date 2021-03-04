@@ -1,11 +1,14 @@
-import { initialState, testAction } from '../types/default';
+import { InitialState, Action } from '../types/default';
 
 const initState = {
   test: '',
 };
 
-const rootReducer = (state = initState, action: testAction): initialState => {
-  return state;
+const rootReducer = (state = initState, action: Action): InitialState => {
+  switch (action.type) {
+    default:
+      return state;
+  }
 };
 
 export default rootReducer;

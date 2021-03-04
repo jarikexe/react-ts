@@ -1,9 +1,8 @@
 
-export type initialState = {
+export type InitialState = {
   test: string,
 }
 
-export type testAction = {
+export type Action = {
   type: string,
-  payload: string,
 }
