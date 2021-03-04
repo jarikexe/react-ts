@@ -1,6 +1,10 @@
-const initState = {};
+import { initialState, testAction } from '../types/default';
 
-const rootReducer = (state = initState, action: any) => {
+const initState = {
+  test: '',
+};
+
+const rootReducer = (state = initState, action: testAction): initialState => {
   return state;
 };
 
