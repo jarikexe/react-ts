@@ -1,7 +1,7 @@
 import { InitialState, Action } from '../types/default';
 
 const initState = {
-  test: '',
+  test: 'test',
 };
 
 const rootReducer = (state = initState, action: Action): InitialState => {
