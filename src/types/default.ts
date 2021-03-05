@@ -1,8 +1,7 @@
-
 export type InitialState = {
-  test: string,
-}
+  test: string;
+};
 
 export type Action = {
-  type: string,
-}
+  type: string;
+};
