@@ -17,7 +17,7 @@
     "react-scripts": "4.0.3",
     "redux": "4.0.5",
     "redux-localstorage-simple": "2.4.0",
-    "typescript": "4.2.2",
+    "typescript": "^4.2.3",
     "web-vitals": "1.1.0"
   },
   "scripts": {
@@ -75,7 +75,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npx lint-staged",
+      "pre-commit": "npx lint-staged && npx tsc --noEmit",
       "pre-push": "npm run lint"
     }
   },
