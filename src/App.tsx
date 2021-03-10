@@ -55,7 +55,7 @@ const App: React.FC = function () {
         <Button variant='contained' color='primary'>
           {t('title')}
         </Button>
-        <div>{t('test')}</div>
+        <div>{t(test)}</div>
         <div>{t('title')}</div>
         <TestComponent />
       </div>
