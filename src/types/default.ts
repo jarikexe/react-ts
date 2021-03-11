@@ -1,6 +1,6 @@
 export type InitialState = {
   test: string;
-  theme: string;
+  theme: number;
   lang: string;
 };
 

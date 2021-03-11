@@ -9,13 +9,17 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { defaultTheme } from './themes/default';
 import { darkTheme } from './themes/dark';
 import TestComponent from './TestComponent';
+import { themes } from './definitions/thems';
+
+const RU = 'ru';
+const EN = 'en';
 
 const App: React.FC = function () {
   const dispatch = useDispatch();
   const test = useSelector((state: InitialState) => state.test);
   const theme = useSelector((state: InitialState) => {
     switch (state.theme) {
-      case 'dark':
+      case themes.DARK:
         return darkTheme;
         break;
       default:
@@ -33,13 +37,13 @@ const App: React.FC = function () {
         <Toolbar>
           <Button
             color='inherit'
-            onClick={() => dispatch({ type: 'CHANGE_LNG', payload: 'ru' })}
+            onClick={() => dispatch({ type: 'CHANGE_LNG', payload: RU })}
           >
             RU
           </Button>
           <Button
             color='inherit'
-            onClick={() => dispatch({ type: 'CHANGE_LNG', payload: 'en' })}
+            onClick={() => dispatch({ type: 'CHANGE_LNG', payload: EN })}
           >
             EN
           </Button>
