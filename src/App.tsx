@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { useSelector, useDispatch } from 'react-redux';
+import { selectTheme } from './actions/theme';
+import { selectLanguage } from './actions/language';
 import { useTranslation } from 'react-i18next';
 import { InitialState } from './types/default';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -16,7 +18,7 @@ const EN = 'en';
 
 const App: React.FC = function () {
   const dispatch = useDispatch();
-  const test = useSelector((state: InitialState) => state.test);
+
   const theme = useSelector((state: InitialState) => {
     switch (state.theme) {
       case themes.DARK:
@@ -35,22 +37,13 @@ const App: React.FC = function () {
     <ThemeProvider theme={createdTheme}>
       <AppBar position='static'>
         <Toolbar>
-          <Button
-            color='inherit'
-            onClick={() => dispatch({ type: 'CHANGE_LNG', payload: RU })}
-          >
+          <Button color='inherit' onClick={() => dispatch(selectLanguage(RU))}>
             RU
           </Button>
-          <Button
-            color='inherit'
-            onClick={() => dispatch({ type: 'CHANGE_LNG', payload: EN })}
-          >
+          <Button color='inherit' onClick={() => dispatch(selectLanguage(EN))}>
             EN
           </Button>
-          <Button
-            color='inherit'
-            onClick={() => dispatch({ type: 'CHANGE_THEME' })}
-          >
+          <Button color='inherit' onClick={() => dispatch(selectTheme())}>
             {t('changeTheme')}
           </Button>
         </Toolbar>
@@ -59,7 +52,6 @@ const App: React.FC = function () {
         <Button variant='contained' color='primary'>
           {t('title')}
         </Button>
-        <div>{t(test)}</div>
         <div>{t('title')}</div>
         <TestComponent />
       </div>

@@ -4,10 +4,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './reducers/rootReducer';
+import reducers from './reducers';
 import './i18n';
 
-const store = createStore(rootReducer);
+const store = createStore(reducers);
 
 ReactDOM.render(
   <Provider store={store}>

@@ -4,7 +4,11 @@ export type InitialState = {
   lang: string;
 };
 
-export type Action = {
+export type ChangeLanguageActionType = {
   type: string;
-  payload?: any;
+  payload: string;
+};
+
+export type ChangeThemeActionType = {
+  type: string;
 };
