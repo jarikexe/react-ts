@@ -3,8 +3,7 @@ import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectTheme } from './actions/theme';
-import { selectLanguage } from './actions/language';
+import { selectTheme, selectLanguage } from './actions/settings';
 import { useTranslation } from 'react-i18next';
 import { InitialState } from './types/default';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -18,7 +17,7 @@ const EN = 'en';
 
 const App: React.FC = function () {
   const dispatch = useDispatch();
-
+  const themeState = useSelector((state: InitialState) => state.theme);
   const theme = useSelector((state: InitialState) => {
     switch (state.theme) {
       case themes.DARK:
@@ -43,7 +42,10 @@ const App: React.FC = function () {
           <Button color='inherit' onClick={() => dispatch(selectLanguage(EN))}>
             EN
           </Button>
-          <Button color='inherit' onClick={() => dispatch(selectTheme())}>
+          <Button
+            color='inherit'
+            onClick={() => dispatch(selectTheme(themeState))}
+          >
             {t('changeTheme')}
           </Button>
         </Toolbar>

@@ -11,4 +11,5 @@ export type ChangeLanguageActionType = {
 
 export type ChangeThemeActionType = {
   type: string;
+  payload: number;
 };

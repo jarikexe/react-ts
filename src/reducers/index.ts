@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
-import { selectLanguage } from './language';
-import { selectTheme } from './theme';
+import { selectLanguage, selectTheme } from './settings';
 
 export default combineReducers({
   language: selectLanguage,
