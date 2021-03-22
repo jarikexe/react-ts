@@ -1,0 +1,90 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "4.11.3",
+    "@material-ui/icons": "4.11.2",
+    "i18n-js": "3.8.0",
+    "i18n-react": "0.7.0",
+    "i18next": "19.9.1",
+    "i18next-browser-languagedetector": "6.0.1",
+    "i18next-http-backend": "1.1.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-i18next": "^11.8.8",
+    "react-redux": "7.2.2",
+    "react-scripts": "4.0.3",
+    "redux": "4.0.5",
+    "redux-localstorage-simple": "2.4.0",
+    "redux-thunk": "2.3.0",
+    "typescript": "4.2.2",
+    "web-vitals": "1.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "lint": "eslint src/**/*.ts src/**/*.tsx",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.11.9",
+    "@testing-library/react": "11.2.5",
+    "@testing-library/user-event": "12.8.0",
+    "@types/jest": "26.0.20",
+    "@types/node": "12.20.4",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.1",
+    "@types/react-redux": "7.1.16",
+    "@typescript-eslint/eslint-plugin": "4.16.1",
+    "@typescript-eslint/parser": "4.16.1",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.21.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-config-react-app": "6.0.0",
+    "eslint-plugin-flowtype": "5.3.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "24.1.5",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-testing-library": "3.10.1",
+    "husky": "4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "2.2.1",
+    "prettier-eslint": "12.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged && npx tsc src/*/**.ts --noEmit && tsc src/*.tsx --jsx react-jsx --noEmit --esModuleInterop",
+      "pre-push": "npm run lint"
+    }
+  },
+  "lint-staged": {
+    ".js, *.ts, *.tsx": [
+      "eslint --ext .js,.jsx,.ts,.tsx ./",
+      "git add"
+    ],
+    "*.js": "eslint --cache --fix"
+  }
+}
