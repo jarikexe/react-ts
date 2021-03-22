@@ -1,6 +1,7 @@
+import { THEMES } from '../definitions/settings';
+
 export type InitialState = {
-  test: string;
-  theme: number;
+  theme: THEMES.DARK | THEMES.DEFAULT;
   lang: string;
 };
 
@@ -11,5 +12,5 @@ export type ChangeLanguageActionType = {
 
 export type ChangeThemeActionType = {
   type: string;
-  payload: number;
+  payload: any;
 };
