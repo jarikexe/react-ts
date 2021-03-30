@@ -1,5 +1,8 @@
 {
   "title": "Hello world",
   "test": "test",
-  "changeTheme": "Cange theme"
+  "changeTheme": "Cange theme",
+  "login": "Sign in",
+  "registration": "Sign up",
+  "logout": "Sign out"
 }
