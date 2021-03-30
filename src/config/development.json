@@ -1,0 +1,12 @@
+{
+  "host": "http://localhost",
+  "port": ":5000",
+  "apiPrefix": "/api/v1",
+  "entities": {
+    "user": {
+      "selfName": "/user",
+      "auth": "/auth",
+      "me": "/me"
+    }
+  }
+}

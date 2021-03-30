@@ -14,3 +14,9 @@ export type ChangeThemeActionType = {
   type: string;
   payload: any;
 };
+
+
+export type User = {
+  email: string;
+  id: string;
+};
