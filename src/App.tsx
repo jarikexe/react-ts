@@ -30,25 +30,30 @@ const App: React.FC = function () {
 
   useLayoutEffect(() => {
     async function getMe() {
-      const resp = await axios
-        .get(
-          host + port + apiPrefix + entities.user.selfName + entities.user.me,
-          { headers: { Authorization: localStorage.getItem('authToken') } }
-        )
-        .then((resp) => {
-          dispatch(setUser({ email: resp.data.email, id: resp.data._id }));
-        })
-        .catch((err) => {
-          if (err) {
-            localStorage.removeItem('authToken');
-            dispatch(setUser(null));
-          }
-          console.log(err);
-        });
+      if (!user?.id) {
+        const resp = await axios
+          .get(
+            host + port + apiPrefix + entities.user.selfName + entities.user.me,
+            { headers: { Authorization: localStorage.getItem('authToken') } }
+          )
+          .then((resp) => {
+            dispatch(setUser({ email: resp.data.email, id: resp.data._id }));
+          })
+          .catch((err) => {
+            if (err) {
+              localStorage.removeItem('authToken');
+              dispatch(setUser(null));
+            }
+          });
+      }
     }
     getMe();
   });
 
+  const logout = () => {
+    localStorage.removeItem('authToken');
+    dispatch(setUser(null));
+  };
   return (
     <ThemeProvider theme={createdTheme}>
       <Router>
@@ -84,9 +89,7 @@ const App: React.FC = function () {
             ) : (
               <>
                 {user?.email}
-                <Button onClick={() => localStorage.removeItem('authToken')}>
-                  {t('logout')}
-                </Button>
+                <Button onClick={logout}>{t('logout')}</Button>
               </>
             )}
           </Toolbar>
