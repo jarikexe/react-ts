@@ -80,7 +80,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npx lint-staged && npx tsc src/*/**.ts --noEmit && tsc src/*.tsx --jsx react-jsx --noEmit --esModuleInterop",
+      "pre-commit": "npx lint-staged && npx tsc src/*/**.ts --noEmit && tsc src/*.tsx --jsx react-jsx --noEmit --esModuleInterop --resolveJsonModule",
       "pre-push": "npm run lint"
     }
   },

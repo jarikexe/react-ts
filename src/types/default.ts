@@ -15,7 +15,6 @@ export type ChangeThemeActionType = {
   payload: any;
 };
 
-
 export type User = {
   email: string;
   id: string;
