@@ -1,5 +1,9 @@
 {
   "title": "Привет мир",
   "test": "тест",
-  "changeTheme": "Сменить тему"
+  "changeTheme": "Сменить тему",
+  "login": "Войти",
+  "registration": "Зарегистрироватся",
+  "logout": "Выход"
+
 }
